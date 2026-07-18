@@ -13,27 +13,41 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+<base target="_blank">
 </head>
 
 <body>
+  <!-- Reading Progress -->
+  <div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar"></div></div>
+
+  <!-- Ambient Canvas -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#hero" class="site-identity">
+      <a href="#hero" class="site-identity magnetic">
         <span>Mouhib Mahadbi</span>
         <span class="identity-badge">archive</span>
       </a>
       <nav class="site-nav" aria-label="Main Navigation">
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+        <button class="nav-toggle magnetic" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
           <span class="nav-toggle-bar"></span>
           <span class="nav-toggle-bar"></span>
         </button>
         <ul id="primary-nav" class="nav-list">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#exploring" class="nav-link">Exploring</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#writing" class="nav-link">Writing</a></li>
-          <li><a href="#labs" class="nav-link">Labs</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#about" class="nav-link magnetic">About</a></li>
+          <li><a href="#exploring" class="nav-link magnetic">Exploring</a></li>
+          <li><a href="#projects" class="nav-link magnetic">Projects</a></li>
+          <li><a href="#writing" class="nav-link magnetic">Writing</a></li>
+          <li><a href="#labs" class="nav-link magnetic">Labs</a></li>
+          <li><a href="#contact" class="nav-link magnetic">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -44,7 +58,7 @@
       <div class="container">
         <div class="hero-layout reveal-hidden">
           <div class="hero-content">
-            <span class="hero-tag">CTF Player &bull; Junior Pentester &bull; Tunisia</span>
+            <span class="hero-tag" data-typewriter="CTF Player • Junior Pentester • Tunisia"></span>
             <h1 class="hero-title">Building security tools, exploring how systems fail, and documenting what I learn.
             </h1>
             <p class="hero-description">
@@ -52,12 +66,13 @@
               write-ups, and security research notes.
             </p>
             <div class="hero-nav">
-              <a href="#projects" class="hero-link">View Projects &rarr;</a>
-              <a href="#writing" class="hero-link">Browse Notes &rarr;</a>
+              <a href="#projects" class="hero-link magnetic">View Projects →</a>
+              <a href="#writing" class="hero-link magnetic">Browse Notes →</a>
             </div>
           </div>
-          <div class="hero-profile-frame">
+          <div class="hero-profile-frame magnetic">
             <img src="profile.jpg" alt="Mouhib Mahadbi avatar illustration" class="hero-profile-img">
+            <div class="profile-ring"></div>
           </div>
         </div>
       </div>
@@ -66,7 +81,7 @@
     <section id="about" class="section">
       <div class="container">
         <header class="section-header reveal-hidden">
-          <span class="section-label">01 / Context</span>
+          <span class="section-label" data-glitch="01 / Context">01 / Context</span>
           <h2 class="section-title">About Mouhib Mahadbi</h2>
         </header>
         <div class="about-box reveal-hidden">
@@ -96,43 +111,49 @@
     <section id="exploring" class="section">
       <div class="container">
         <header class="section-header reveal-hidden">
-          <span class="section-label">02 / Investigation</span>
+          <span class="section-label" data-glitch="02 / Investigation">02 / Investigation</span>
           <h2 class="section-title">Currently Exploring</h2>
         </header>
         <div class="exploring-grid reveal-hidden">
-          <div class="exploring-card">
+          <div class="exploring-card" data-tilt>
+            <div class="card-shine"></div>
             <h3 class="exploring-topic">Penetration Testing & CTF</h3>
-            <p class="exploring-focus">&rarr; analyzing web application attack vectors, enumeration, and exploit
+            <p class="exploring-focus">→ analyzing web application attack vectors, enumeration, and exploit
               techniques</p>
           </div>
 
-          <div class="exploring-card">
+          <div class="exploring-card" data-tilt>
+            <div class="card-shine"></div>
             <h3 class="exploring-topic">Linux internals & Privilege Escalation</h3>
-            <p class="exploring-focus">&rarr; testing local root vectors, SUID misconfigurations, and kernel space
+            <p class="exploring-focus">→ testing local root vectors, SUID misconfigurations, and kernel space
               isolation</p>
           </div>
 
-          <div class="exploring-card">
+          <div class="exploring-card" data-tilt>
+            <div class="card-shine"></div>
             <h3 class="exploring-topic">Network Security & PCAP</h3>
-            <p class="exploring-focus">&rarr; experimenting with raw packet parsing, frame extraction, and network
+            <p class="exploring-focus">→ experimenting with raw packet parsing, frame extraction, and network
               attack surfaces</p>
           </div>
 
-          <div class="exploring-card">
+          <div class="exploring-card" data-tilt>
+            <div class="card-shine"></div>
             <h3 class="exploring-topic">Privacy Engineering</h3>
-            <p class="exploring-focus">&rarr; building tools around metadata reduction, EXIF stripping, and digital
+            <p class="exploring-focus">→ building tools around metadata reduction, EXIF stripping, and digital
               footprints</p>
           </div>
 
-          <div class="exploring-card">
+          <div class="exploring-card" data-tilt>
+            <div class="card-shine"></div>
             <h3 class="exploring-topic">AppSec & AI Tooling</h3>
-            <p class="exploring-focus">&rarr; structuring prompt security frameworks and automated repository
+            <p class="exploring-focus">→ structuring prompt security frameworks and automated repository
               vulnerability scanners</p>
           </div>
 
-          <div class="exploring-card">
+          <div class="exploring-card" data-tilt>
+            <div class="card-shine"></div>
             <h3 class="exploring-topic">Applied Cryptography</h3>
-            <p class="exploring-focus">&rarr; testing encryption primitives, key exchange mechanics, and verification
+            <p class="exploring-focus">→ testing encryption primitives, key exchange mechanics, and verification
               flows</p>
           </div>
         </div>
@@ -142,11 +163,28 @@
     <section id="projects" class="section">
       <div class="container">
         <header class="section-header reveal-hidden">
-          <span class="section-label">03 / Code Repositories</span>
+          <span class="section-label" data-glitch="03 / Code Repositories">03 / Code Repositories</span>
           <h2 class="section-title">Things I Built</h2>
         </header>
         <div class="projects-grid reveal-hidden">
-          <article class="project-card">
+          <article class="project-card" data-tilt>
+            <div class="card-shine"></div>
+            <div>
+              <div class="project-header">
+                <h3 class="project-title">Fratello Fast Food</h3>
+                <span class="status-badge status-released">released</span>
+              </div>
+              <p class="project-problem">Production responsive web application and digital restaurant portal for Fratello Fast Food in Hammamet, featuring high-performance 60 FPS interactions, custom food media showcase, and automated WhatsApp ordering integration.</p>
+            </div>
+            <div class="project-footer">
+              <span class="project-tech">Web Engineering • UI/UX • Frontend</span>
+              <a href="https://github.com/aasdr8235-afk/Fratello_fastfood" class="project-github magnetic" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-tilt>
+            <div class="card-shine"></div>
             <div>
               <div class="project-header">
                 <h3 class="project-title">Metadata-remover</h3>
@@ -156,13 +194,14 @@
                 sensitive metadata from files.</p>
             </div>
             <div class="project-footer">
-              <span class="project-tech">Python &bull; Privacy</span>
-              <a href="https://github.com/mouhib02/Metadata-remover" class="project-github" target="_blank"
-                rel="noopener noreferrer">GitHub &rarr;</a>
+              <span class="project-tech">Python • Privacy</span>
+              <a href="https://github.com/mouhib02/Metadata-remover" class="project-github magnetic" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-tilt>
+            <div class="card-shine"></div>
             <div>
               <div class="project-header">
                 <h3 class="project-title">repoguard-lite</h3>
@@ -172,13 +211,14 @@
                 misconfigurations in codebases.</p>
             </div>
             <div class="project-footer">
-              <span class="project-tech">Shell &bull; AppSec</span>
-              <a href="https://github.com/mouhib02/repoguard-lite" class="project-github" target="_blank"
-                rel="noopener noreferrer">GitHub &rarr;</a>
+              <span class="project-tech">Shell • AppSec</span>
+              <a href="https://github.com/mouhib02/repoguard-lite" class="project-github magnetic" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-tilt>
+            <div class="card-shine"></div>
             <div>
               <div class="project-header">
                 <h3 class="project-title">AppSec-Prompt-Kit</h3>
@@ -188,13 +228,14 @@
                 and code audit guides for LLMs.</p>
             </div>
             <div class="project-footer">
-              <span class="project-tech">AppSec &bull; Security</span>
-              <a href="https://github.com/mouhib02/AppSec-Prompt-Kit" class="project-github" target="_blank"
-                rel="noopener noreferrer">GitHub &rarr;</a>
+              <span class="project-tech">AppSec • Security</span>
+              <a href="https://github.com/mouhib02/AppSec-Prompt-Kit" class="project-github magnetic" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-tilt>
+            <div class="card-shine"></div>
             <div>
               <div class="project-header">
                 <h3 class="project-title">pcap-jpeg-extractor-to-video</h3>
@@ -204,13 +245,14 @@
                 renders them sequentially into video files.</p>
             </div>
             <div class="project-footer">
-              <span class="project-tech">Python &bull; PCAP &bull; Forensics</span>
-              <a href="https://github.com/mouhib02/pcap-jpeg-extractor-to-video" class="project-github" target="_blank"
-                rel="noopener noreferrer">GitHub &rarr;</a>
+              <span class="project-tech">Python • PCAP • Forensics</span>
+              <a href="https://github.com/mouhib02/pcap-jpeg-extractor-to-video" class="project-github magnetic" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-tilt>
+            <div class="card-shine"></div>
             <div>
               <div class="project-header">
                 <h3 class="project-title">vidcii</h3>
@@ -220,9 +262,9 @@
                 renders in real time.</p>
             </div>
             <div class="project-footer">
-              <span class="project-tech">C &bull; Media Tooling</span>
-              <a href="https://github.com/mouhib02/vidcii" class="project-github" target="_blank"
-                rel="noopener noreferrer">GitHub &rarr;</a>
+              <span class="project-tech">C • Media Tooling</span>
+              <a href="https://github.com/mouhib02/vidcii" class="project-github magnetic" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
             </div>
           </article>
         </div>
@@ -232,41 +274,41 @@
     <section id="writing" class="section">
       <div class="container">
         <header class="section-header reveal-hidden">
-          <span class="section-label">04 / Publications & Research</span>
+          <span class="section-label" data-glitch="04 / Publications & Research">04 / Publications & Research</span>
           <h2 class="section-title">Things I Wrote</h2>
         </header>
         <div class="writing-list reveal-hidden">
-          <article class="writing-item">
+          <article class="writing-item" data-tilt>
             <div class="writing-content">
               <div class="writing-meta">
                 <span>MouhibMahadbi</span>
-                <span>&bull;</span>
+                <span>•</span>
                 <span>2d ago</span>
               </div>
               <h3 class="writing-title">A Photo Is Not Just a Picture: Understanding Image Metadata and Privacy Risks
               </h3>
               <p class="writing-summary">You take a photo of your coffee, your workspace, your house, or a trip. You see
                 only the image. A collection of pixels representing a moment, but behind it lies hidden metadata.</p>
-              <a href="https://medium.com/@mouhibmh" class="writing-link" target="_blank" rel="noopener noreferrer">Read
-                on Medium &rarr;</a>
+              <a href="https://medium.com/@mouhibmh" class="writing-link magnetic" target="_blank" rel="noopener noreferrer">Read
+                on Medium →</a>
             </div>
             <div class="writing-thumb-frame">
               <img src="article-1.png" alt="A Photo Is Not Just a Picture article thumbnail" class="writing-thumb-img">
             </div>
           </article>
 
-          <article class="writing-item">
+          <article class="writing-item" data-tilt>
             <div class="writing-content">
               <div class="writing-meta">
                 <span>MouhibMahadbi</span>
-                <span>&bull;</span>
+                <span>•</span>
                 <span>Jun 15</span>
               </div>
               <h3 class="writing-title">Would You Notice If Your Machine Was Compromised?</h3>
               <p class="writing-summary">A defensive walkthrough of suspicious traffic patterns, timelines, and the
                 questions I would ask during forensic network analysis.</p>
-              <a href="https://medium.com/@mouhibmh" class="writing-link" target="_blank" rel="noopener noreferrer">Read
-                on Medium &rarr;</a>
+              <a href="https://medium.com/@mouhibmh" class="writing-link magnetic" target="_blank" rel="noopener noreferrer">Read
+                on Medium →</a>
             </div>
             <div class="writing-thumb-frame">
               <img src="article-2.png" alt="Would You Notice If Your Machine Was Compromised article thumbnail"
@@ -274,18 +316,18 @@
             </div>
           </article>
 
-          <article class="writing-item">
+          <article class="writing-item" data-tilt>
             <div class="writing-content">
               <div class="writing-meta">
                 <span>MouhibMahadbi</span>
-                <span>&bull;</span>
+                <span>•</span>
                 <span>Jan 12</span>
               </div>
               <h3 class="writing-title">Do We Really Understand What a Vulnerability Is?</h3>
               <p class="writing-summary">The word vulnerability is used daily in cybersecurity. We repeat it constantly,
                 often with confidence, but rarely with reflection on root causes.</p>
-              <a href="https://medium.com/@mouhibmh" class="writing-link" target="_blank" rel="noopener noreferrer">Read
-                on Medium &rarr;</a>
+              <a href="https://medium.com/@mouhibmh" class="writing-link magnetic" target="_blank" rel="noopener noreferrer">Read
+                on Medium →</a>
             </div>
             <div class="writing-thumb-frame">
               <img src="article-3.png" alt="Do We Really Understand What a Vulnerability Is article thumbnail"
@@ -299,11 +341,12 @@
     <section id="labs" class="section">
       <div class="container">
         <header class="section-header reveal-hidden">
-          <span class="section-label">05 / Practice Grounds</span>
+          <span class="section-label" data-glitch="05 / Practice Grounds">05 / Practice Grounds</span>
           <h2 class="section-title">Things I Tested</h2>
         </header>
         <div class="labs-grid reveal-hidden">
-          <div class="lab-box">
+          <div class="lab-box" data-tilt>
+            <div class="card-shine"></div>
             <div class="lab-header-flex">
               <img src="logo-thm.png" alt="TryHackMe logo" class="lab-logo-icon">
               <span class="lab-platform">TryHackMe</span>
@@ -311,10 +354,11 @@
             <h3 class="lab-title">MouhibMahadbi on TryHackMe</h3>
             <p class="lab-desc">Hands-on CTF challenges and pentesting labs covering web application vulnerabilities,
               network exploitation, and privilege escalation.</p>
-            <div class="lab-notes">Active profile: MouhibMahadbi &bull; CTF Competitor</div>
+            <div class="lab-notes">Active profile: MouhibMahadbi • CTF Competitor</div>
           </div>
 
-          <div class="lab-box">
+          <div class="lab-box" data-tilt>
+            <div class="card-shine"></div>
             <div class="lab-header-flex">
               <img src="logo-htb.png" alt="Hack The Box logo" class="lab-logo-icon">
               <span class="lab-platform">Hack The Box</span>
@@ -322,7 +366,7 @@
             <h3 class="lab-title">Mouhib Mahadbi on Hack The Box</h3>
             <p class="lab-desc">Active machine exploitation, enumeration, and privilege escalation challenges on Hack
               The Box platform.</p>
-            <div class="lab-notes">Professional Rank &bull; Level 49</div>
+            <div class="lab-notes">Professional Rank • Level 49</div>
           </div>
         </div>
       </div>
@@ -331,7 +375,7 @@
     <section id="contact" class="section">
       <div class="container">
         <header class="section-header reveal-hidden">
-          <span class="section-label">06 / Directory</span>
+          <span class="section-label" data-glitch="06 / Directory">06 / Directory</span>
           <h2 class="section-title">Public Profiles</h2>
         </header>
         <div class="contact-box reveal-hidden">
@@ -339,14 +383,14 @@
             <p>Direct verified links to code repositories, CTF research notes, and active laboratory profiles.</p>
           </div>
           <div class="contact-links-list">
-            <a href="https://github.com/mouhib02" class="contact-item" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/mouhib02" class="contact-item magnetic" target="_blank" rel="noopener noreferrer">
               <div class="contact-brand">
                 <img src="logo-github.png" alt="GitHub Logo" class="contact-logo-icon">
                 <span class="contact-name">GitHub</span>
               </div>
               <span class="contact-url">github.com/mouhib02</span>
             </a>
-            <a href="https://tryhackme.com/p/MouhibMahadbi" class="contact-item" target="_blank"
+            <a href="https://tryhackme.com/p/MouhibMahadbi" class="contact-item magnetic" target="_blank"
               rel="noopener noreferrer">
               <div class="contact-brand">
                 <img src="logo-thm.png" alt="TryHackMe Logo" class="contact-logo-icon">
@@ -354,7 +398,7 @@
               </div>
               <span class="contact-url">tryhackme.com/p/MouhibMahadbi</span>
             </a>
-            <a href="https://profile.hackthebox.com/profile/019c7d5d-a5cf-7090-a3de-adf2e89a0dcb" class="contact-item"
+            <a href="https://profile.hackthebox.com/profile/019c7d5d-a5cf-7090-a3de-adf2e89a0dcb" class="contact-item magnetic"
               target="_blank" rel="noopener noreferrer">
               <div class="contact-brand">
                 <img src="logo-htb.png" alt="Hack The Box Logo" class="contact-logo-icon">
@@ -362,7 +406,7 @@
               </div>
               <span class="contact-url">profile.hackthebox.com/profile/Mouhib</span>
             </a>
-            <a href="https://medium.com/@mouhibmh" class="contact-item" target="_blank" rel="noopener noreferrer">
+            <a href="https://medium.com/@mouhibmh" class="contact-item magnetic" target="_blank" rel="noopener noreferrer">
               <div class="contact-brand">
                 <img src="logo-medium.png" alt="Medium Logo" class="contact-logo-icon">
                 <span class="contact-name">Medium</span>
@@ -377,8 +421,8 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>&copy; <time datetime="2026">2026</time> Mouhib Mahadbi. Personal technical notebook.</div>
-      <div><a href="#hero">Back to top &uarr;</a></div>
+      <div>© <time datetime="2026">2026</time> Mouhib Mahadbi. Personal technical notebook.</div>
+      <div><a href="#hero" class="magnetic">Back to top ↑</a></div>
     </div>
   </footer>
 
